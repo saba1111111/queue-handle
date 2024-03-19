@@ -12,7 +12,7 @@ export class QueueConfigProvider implements SharedBullConfigurationFactory {
       QUEUE_CONFIG_CONSTANTS;
 
     return {
-      redis: { host: 'redis', port: 6379 },
+      redis: { host: process.env.REDIS_HOST, port: +process.env.REDIS_PORT },
       prefix,
       defaultJobOptions: {
         backoff,
